@@ -1,12 +1,13 @@
-  (function () {
+window.onload = () => {
     const script = document.createElement("script");
-    script.src = "https://cdn.jsdelivr.net/npm/rasa-webchat@1.0.1/lib/index.js";
+    script.src = "https://cdn.jsdelivr.net/gh/botfront/rasa-webchat@master/lib/index.js";
     script.async = true;
+  
     script.onload = () => {
       WebChat.default({
         initPayload: "/saludo",
         customData: { language: "es" },
-        socketUrl: "https://cc44-181-1-53-69.ngrok-free.app", // tu ngrok activo
+        socketUrl: "https://cc44-181-1-53-69.ngrok-free.app", // Tu ngrok actual
         socketPath: "/socket.io/",
         title: "Asistente Virtual",
         subtitle: "¿En qué puedo ayudarte?",
@@ -14,6 +15,7 @@
         showFullScreenButton: true,
       }, null);
     };
-    document.head.appendChild(script);
-  })();
+  
+    document.body.appendChild(script);
+  };
   
