@@ -3,14 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <title>Chatbot Rasa</title>
+    <script src="https://unpkg.com/@rasahq/rasa-webchat@1.0.1/lib/index.js"></script>
   </head>
   <body>
     <h1>Asistente Virtual</h1>
 
-    <!-- Script base del widget de Rasa (solo una vez) -->
-    <script src="https://cdn.jsdelivr.net/npm/@rasahq/rasa-webchat@1.0.1/lib/index.js"></script>
-
-    <!-- Tu configuración personalizada -->
-    <script src="https://hetur.github.io/rasa_widget_odoo/rasa-widget.js"></script>
+    <script>
+      window.onload = () => {
+        WebChat.default({
+          initPayload: "/saludo",
+          customData: { language: "es" },
+          socketUrl: "https://65a4-181-1-53-69.ngrok-free.app",
+          socketPath: "/socket.io/",
+          title: "Asistente Virtual",
+          subtitle: "¿En qué puedo ayudarte?",
+          inputTextFieldHint: "Escribe tu consulta...",
+          showFullScreenButton: true,
+        }, null);
+      };
+    </script>
   </body>
 </html>
+
