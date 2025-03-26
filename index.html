@@ -7,13 +7,14 @@
   </head>
   <body>
     <h1>Asistente Virtual</h1>
+    <script src="https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.js"></script>
 
     <script>
       window.onload = () => {
         WebChat.default({
           initPayload: "/saludo",
           customData: { language: "es" },
-          socketUrl: "https://4f21-181-1-53-69.ngrok-free.app",  // ⚠️ cambia por tu URL activa
+          socketUrl: "https://65a4-181-1-53-69.ngrok-free.app",  // ⚠️ cambia por tu URL activa
           socketPath: "/socket.io/",
           title: "Asistente Virtual",
           subtitle: "¿En qué puedo ayudarte?",
