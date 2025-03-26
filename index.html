@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8" />
     <title>Chatbot Rasa</title>
-    <script src="https://cdn.jsdelivr.net/gh/botfront/rasa-webchat@master/lib/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/rasa-webchat@1.0.1/lib/index.js"></script>
   </head>
   <body>
     <h1>Asistente Virtual</h1>
 
     <script>
-      window.WebChat.default(
-        {
+      window.onload = () => {
+        WebChat.default({
           initPayload: "/saludo",
           customData: { language: "es" },
-          socketUrl: "https://98f4-181-1-53-69.ngrok-free.app", // ⚠️ reemplaza con tu URL activa
+          socketUrl: "https://98f4-181-1-53-69.ngrok-free.app",  // ⚠️ cambia por tu URL activa
           socketPath: "/socket.io/",
           title: "Asistente Virtual",
           subtitle: "¿En qué puedo ayudarte?",
           inputTextFieldHint: "Escribe tu consulta...",
           showFullScreenButton: true
-        },
-        null
-      );
+        }, null);
+      };
     </script>
   </body>
 </html>
-
